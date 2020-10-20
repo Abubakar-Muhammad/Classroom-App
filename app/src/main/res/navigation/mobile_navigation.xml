@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_announcements">
+
+    <fragment
+        android:id="@+id/navigation_announcements"
+        android:name="com.example.projectapplication.ui.announcements.AnnouncementsFragment"
+        android:label="@string/title_announcements"
+        tools:layout="@layout/fragment_announcements">
+        <argument
+            android:name="courseId"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_lecture_notes"
+        android:name="com.example.projectapplication.ui.lectures_notes.LectureNotesFragment"
+        android:label="@string/title_lecture_notes"
+        tools:layout="@layout/fragment_lecturenotes" />
+
+    <fragment
+        android:id="@+id/navigation_chats"
+        android:name="com.example.projectapplication.ui.chat.ChatsFragment"
+        android:label="@string/title_chats"
+        tools:layout="@layout/fragment_chats" />
+</navigation>

@@ -1,0 +1,190 @@
+[
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_recyclerview.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\recyclerview.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_content_main.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_baseline_contact_phone_24.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_baseline_contact_phone_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_resend_verification_email_dialog.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\resend_verification_email_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_course_item.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\course_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\menu_search_menu.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\menu\\search_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_fragment_notifications.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\fragment_notifications.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_notifications_black_24dp.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_notifications_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_dashboard_black_24dp.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_dashboard_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_baseline_account_box_24.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_baseline_account_box_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\menu\\bottom_nav_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_enroll_course_dialog.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\enroll_course_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\navigation_mobile_navigation.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\navigation\\mobile_navigation.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_course_item_search.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\course_item_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_baseline_add_circle_24.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_baseline_add_circle_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_activity_course.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\activity_course.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_baseline_android_24.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_baseline_android_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_home_black_24dp.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_home_black_24dp.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_baseline_delete_24.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_baseline_delete_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\activity_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_baseline_search_24.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_baseline_lock_24.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_baseline_lock_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_fragment_dashboard.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\fragment_dashboard.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_dialog_changephoto.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\dialog_changephoto.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_baseline_contact_mail_24.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_baseline_contact_mail_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\layout_reset_password_dialog.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\layout\\reset_password_dialog.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\menu_course_menu.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\menu\\course_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\sadiq\\AndroidStudioProjects\\ProjectApplication\\student\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    }
+]

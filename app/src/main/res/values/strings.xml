@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">Classroom Tutor</string>
+    <string name="title_activity_course">MainActivity</string>
+    <string name="title_announcements">Announcements</string>
+    <string name="title_lecture_notes">Lecture Notes</string>
+    <string name="title_chats">Chat</string>
+    <string name="email_registration_text">Email Registration</string>
+    <string name="email_text">Email</string>
+    <string name="password_text">Password</string>
+    <string name="confirm_password_text">Confirm Password</string>
+    <string name="Sign_in_text">Sign in</string>
+    <string name="register_text">Register</string>
+    <string name="forgot_password_text">Forgot Password</string>
+    <string name="resend_verification_email_text">Resend Verification Email</string>
+    <string name="reset_password_text">Reset Password</string>
+    <string name="confirm_text">confirm</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="sign_out_text">Sign out</string>
+    <string name="account_settings_text">Account Settings</string>
+    <string name="change_password_text">Change Password</string>
+    <string name="save_text">Save</string>
+    <string name="first_and_last_name_text">First and last name</string>
+    <string name="phone_text">Primary contact phone #</string>
+
+    <!--    firebase nodes-->
+    <string name="dbuser_node">users</string>
+    <string name="dbcourses_node">courses</string>
+    <string name="dblecture_notes_node">lecture_notes</string>
+    <string name="dbannouncements_node">announcements</string>
+    <string name="dbchats_node">chats</string>
+    <string name="dbassignments_node">assignments</string>
+    <string name="dbassignments_submission_node">assignment_submission</string>
+
+    <!--  firebase users   -->
+    <string name="user_name">name</string>
+    <string name="user_phone">phone</string>
+    <string name="user_email">email</string>
+    <string name="user_profile">profile_image</string>
+    <string name="user_id">id</string>
+    <string name="user_type">type</string>
+    <string name="user_courses">courses</string>
+
+    <!--firebase course    -->
+    <string name="db_course_name">course_name</string>
+    <string name="db_course_code">course_code</string>
+    <string name="db_creator_id">creator_id</string>
+    <string name="db_course_id">course_id</string>
+    <string name="db_date_created">date_created</string>
+    <string name="db_users">users</string>
+    <string name="db_announcements">announcements</string>
+    <string name="db_lecture_notes">lecture_notes</string>
+
+
+    <!-- firebase announcement    -->
+    <string name="dbannouncement_title">announcement_title</string>
+    <string name="dbannouncement_description">announcement_description</string>
+    <string name="db_announcement_time">announcement_time</string>
+
+    <!-- firebase lecture notes    -->
+    <string name="dblecture_note_description">lecture_note_description</string>
+    <string name="dblecture_note_id">lecture_note_id</string>
+    <string name="dblecture_note_name">lecture_note_name</string>
+    <string name="dblecture_note_url">lecture_note_url</string>
+    <string name="dblecture_note_path">lecture_note_path</string>
+    <string name="dblecture_note_session_uri">lecture_note_session_uri</string>
+    <string name="dblecture_note_upload_status">lecture_note_upload_status</string>
+    <string name="dblecture_note_tutor_file_path">lecture_note_tutor_file_path</string>
+    <string name="dblecture_note_student_file_path">lecture_note_student_file_path</string>
+    <string name="dblecture_note_upload_time">lecture_note_upload_time</string>
+
+    <!-- firebase chat    -->
+    <string name="dbmessage_id">message_id</string>
+    <string name="dbmessage_sender_id">message_sender_id</string>
+    <string name="dbmessage_timestamp">message_timestamp</string>
+    <string name="dbmessage">message</string>
+
+
+    <string name="change_photo_from_memory_text">Choose photo from memory</string>
+    <string name="take_photo_text">Take a Photo</string>
+    <string name="title_activity_tutor_main">TutorMainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_student_main">StudentMainActivity</string>
+    <string name="create_text">Create</string>
+    <string name="coursecode">Course Code</string>
+    <string name="course_title_text">Course Title</string>
+    <string name="intent_course">course intent</string>
+    <string name="announcement_content_text">Content</string>
+    <string name="announcement_title">Title</string>
+    <string name="submit_text">Submit</string>
+    <string name="announcement_description">Description</string>
+    <string name="uplaod_text">Upload</string>
+    <string name="file_upload_text">Select file to upload</string>
+    <string name="view_text">View</string>
+    <string name="pause_text">Pause</string>
+    <string name="download_text">Download</string>
+    <string name="resume_text">Resume</string>
+    <string name="delete_text">Delete</string>
+    <string name="new_message_text">new message...</string>
+
+
+</resources>
