@@ -49,6 +49,8 @@ public class ChatMessagesListAdapter extends RecyclerView.Adapter<ChatMessagesLi
         holder.message.setText(mChatMessageList.get(position).getMessage());
         String timestamp = DateAndTimeConversion.newInstance().get12hrFormattedTime(mChatMessageList.get(position).getMessage_timestamp());
         holder.timeStamp.setText(timestamp);
+        holder.senderImage.setImageDrawable(null);
+        holder.senderName.setText(null);
         if(mChatMessageList.get(position).getMessage_sender_id() != null){
             Query query = FirebaseDatabase.getInstance().getReference()
                     .child(mContext.getString(R.string.dbuser_node))

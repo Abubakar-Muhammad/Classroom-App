@@ -92,7 +92,7 @@ public class EnrollCoursesListAdapter extends RecyclerView.Adapter<EnrollCourses
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (Course course : mFilterCourseList) {
-                    if (course.getCourse_name().toLowerCase().contains(filterPattern)) {
+                    if (course.getCourse_code().toLowerCase().contains(filterPattern)) {
                         filteredList.add(course);
                     }
                 }

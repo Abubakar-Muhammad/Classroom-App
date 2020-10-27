@@ -24,6 +24,7 @@ import com.example.student.models.LectureNotes;
 import com.example.student.ui.lecture_notes.LectureNotesFragment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -36,6 +37,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -87,6 +92,28 @@ public class LecturesNotesListAdapter extends RecyclerView.Adapter<LecturesNotes
         }
         mLectureNotesList = lectureNotes;
         notifyDataSetChanged();
+    }
+
+    public void getLectureNotes(){
+        FirebaseDatabase.getInstance().getReference().child(mContext.getString(R.string.dbcourses_node))
+                .child(mCourseId)
+                .child(mContext.getString(R.string.dblecture_notes_node))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        List<LectureNotes> notesList = new ArrayList<>();
+                        for(DataSnapshot dataSnapshot: snapshot.getChildren()){
+                            LectureNotes lectureNote = dataSnapshot.getValue(LectureNotes.class);
+                            notesList.add(lectureNote);
+                        }
+                        updateLectureNotes(notesList);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
     }
 
 
@@ -154,7 +181,12 @@ public class LecturesNotesListAdapter extends RecyclerView.Adapter<LecturesNotes
                 public boolean onMenuItemClick(MenuItem menuItem) {
                     switch (menuItem.getItemId()) {
                         case R.id.download:
-                            downloadFile();
+                            try {
+                                downloadFile();
+                            } catch (Exception e) {
+                                FirebaseCrashlytics.getInstance().recordException(e);
+                                // ...handle the exception.
+                            }
                             break;
                     }
                     return true;
@@ -201,19 +233,61 @@ public class LecturesNotesListAdapter extends RecyclerView.Adapter<LecturesNotes
                                             toast.setGravity(Gravity.CENTER,0,0);
                                             toast.show();
                                             downloadProgress.setIndeterminate(false);
+                                           getLectureNotes();
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
                                             Log.d(TAG, "onFailure: " + e.getMessage());
+                                            FirebaseCrashlytics.getInstance().recordException(e);
+                                        }
+                                    }).addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
+                                        @Override
+                                        public void onProgress(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
+                                            Log.d(TAG, "onProgress: "+snapshot.getTotalByteCount());
                                         }
                                     });
-//                                    .addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
+//                                    final long ONE_MEGABYTE = 100 * 1024 * 1024;
+//                                    fileReference.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
 //                                        @Override
-//                                        public void onProgress(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
-//                                            downloadProgress.setIndeterminate(true);
+//                                        public void onSuccess(byte[] bytes) {
+//                                            // Data for "images/island.jpg" is returns, use this as needed
+//                                            try {
+//                                                FileOutputStream fos = new FileOutputStream(file);
+//                                                fos.write(bytes);
+//                                                fos.close();
+//                                                Log.d(TAG, "onSuccess: filePath"+filePath);
+//                                            FirebaseDatabase.getInstance().getReference()
+//                                                    .child(mContext.getString(R.string.dbcourses_node))
+//                                                    .child(mCourseId)
+//                                                    .child(mContext.getString(R.string.dblecture_notes_node))
+//                                                    .child(mLectureNotesList.get(getAdapterPosition()).getLecture_note_id())
+//                                                    .child(mContext.getString(R.string.dblecture_note_student_file_path))
+//                                                    .setValue(file.getAbsolutePath());
+//                                            Toast toast = Toast.makeText(mContext,"Download done",Toast.LENGTH_SHORT);
+//                                            toast.setGravity(Gravity.CENTER,0,0);
+//                                            toast.show();
+//                                            downloadProgress.setIndeterminate(false);
+//
+//                                            } catch (Exception e) {
+//                                                Log.d(TAG, "onSuccess: "+e.getMessage()+", "+e.getCause());
+//                                                e.printStackTrace();
+//                                            }
+//
+//                                        }
+//                                    }).addOnFailureListener(new OnFailureListener() {
+//                                        @Override
+//                                        public void onFailure(@NonNull Exception exception) {
+//                                            // Handle any errors
+//                                            Log.d(TAG, "onFailure: "+exception.getMessage()+", "+exception.getCause());
 //                                        }
 //                                    });
+////                                    .addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
+////                                        @Override
+////                                        public void onProgress(@NonNull FileDownloadTask.TaskSnapshot snapshot) {
+////                                            downloadProgress.setIndeterminate(true);
+////                                        }
+////                                    });
                                 }
                             }
 

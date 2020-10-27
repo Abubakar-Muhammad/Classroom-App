@@ -29,6 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.util.Map;
+
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity";
@@ -117,14 +119,20 @@ public class LoginActivity extends AppCompatActivity {
                             .addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    User user = snapshot.getChildren().iterator().next().getValue(User.class);
-                                    if(user.getType().equals("Student")){
-                                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                        startActivity(intent);
-                                    }
-                                    else{
-                                        Toast.makeText(LoginActivity.this, "This is the student application, please login with the tutor application", Toast.LENGTH_SHORT).show();
+                                    for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+//                                        Map<String,Object> objectMap = (Map<String, Object>) snapshot.getChildren().iterator().next().getValue(User.class);
+                                        Map<String,Object> objectMap = (Map<String, Object>) dataSnapshot.getValue();
+                                        String userType = objectMap.get(getString(R.string.user_type)).toString();
+                                        User user = new User() ;
+                                        user.setType(userType);
+                                        if(user.getType().equals("Student")){
+                                            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            startActivity(intent);
+                                        }
+                                        else{
+                                            Toast.makeText(LoginActivity.this, "This is the student application, please login with the tutor application", Toast.LENGTH_SHORT).show();
+                                        }
                                     }
                                 }
 

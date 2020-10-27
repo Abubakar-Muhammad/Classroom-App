@@ -63,7 +63,6 @@ public class SettingsActivity extends AppCompatActivity implements ChangePhotoDi
     private ImageView mProfileImage;
     private ProgressBar mProgressBar;
 
-//    private static final String DOMAIN_NAME = "tabian.ca";
     private static final int REQUEST_CODE = 1234;
     private static final double MB_THRESHHOLD = 5.0;
     private static final double MB = 1000000.0;
@@ -152,7 +151,6 @@ public class SettingsActivity extends AppCompatActivity implements ChangePhotoDi
         setupAuthStateListener();
         setDetails();
 //        verifyStoragePermissions();
-
     }
 
 

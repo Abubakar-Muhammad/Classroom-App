@@ -44,7 +44,7 @@ public class ChatsFragment extends Fragment {
     String mCourseId;
     DatabaseReference mReference;
     private static final String TAG = "ChatsFragment";
-    List<ChatMessage> mMessageList;
+    List<ChatMessage> mMessageList = new ArrayList<>();
 
     public static ChatsFragment newInstance(){
         return new ChatsFragment();
@@ -60,7 +60,6 @@ public class ChatsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mMessageList = new ArrayList<>();
         mCheckMark = view.findViewById(R.id.check_mark);
         mMessageText = view.findViewById(R.id.message);
         mReference = FirebaseDatabase.getInstance().getReference();
@@ -70,10 +69,9 @@ public class ChatsFragment extends Fragment {
             public void onChanged(String s) {
                 mCourseId = s;
                 enableChatroomListener();
-                getChatMessages();
+                init();
             }
         });
-        init();
         mCheckMark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,6 +79,7 @@ public class ChatsFragment extends Fragment {
                 message.setMessage_timestamp(DateAndTimeConversion.newInstance().getTimestamp());
                 message.setMessage_sender_id(FirebaseAuth.getInstance().getUid());
                 message.setMessage(mMessageText.getText().toString());
+                mReference = FirebaseDatabase.getInstance().getReference();
                 String messageId = mReference.child(getString(R.string.dbcourses_node)).child(mCourseId).child(getString(R.string.dbchats_node)).push().getKey();
                 message.setMessage_id(messageId);
                 mReference.child(getString(R.string.dbcourses_node))
@@ -106,6 +105,7 @@ public class ChatsFragment extends Fragment {
         if(mMessageList.size() > 0){
             mMessageList.clear();
         }
+        mReference = FirebaseDatabase.getInstance().getReference();
         Query query = mReference.child(getString(R.string.dbcourses_node))
                 .child(mCourseId)
                 .child(getString(R.string.dbchats_node))
@@ -136,8 +136,17 @@ public class ChatsFragment extends Fragment {
 
     ValueEventListener mValueEventListener = new ValueEventListener() {
         @Override
-        public void onDataChange(DataSnapshot dataSnapshot) {
-            getChatMessages();
+        public void onDataChange(DataSnapshot dataSnapshot)
+        {
+            if(mMessageList.size() > 0){
+                mMessageList.clear();
+            }
+            for(DataSnapshot singleSnapshot : dataSnapshot.getChildren()){
+                ChatMessage chatMessage = singleSnapshot.getValue(ChatMessage.class);
+                mMessageList.add(chatMessage);
+            }
+            mAdapter.notifyDataSetChanged();
+            mRecyclerView.getLayoutManager().scrollToPosition(mMessageList.size()-1);
         }
 
         @Override

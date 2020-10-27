@@ -23,7 +23,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"/>
         </provider>
-        <activity android:name=".EnrollCourseActivity"></activity>
         <activity android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label="@string/studentmainactivity">
@@ -38,6 +37,7 @@
         <activity android:name=".CourseActivity"/>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".SettingsActivity"/>
+        <activity android:name=".EnrollCourseActivity"></activity>
     </application>
 
 </manifest>
