@@ -8,4 +8,7 @@
     <color name="textHeaderColor">#000</color>
     <color name="White">#FFFFFF</color>
     <color name="Grey">#000</color>
+    <color name="assignment_done">#CF1717</color>
+    <color name="assignment_not_done">#3461AE</color>
+    <color name="piechart_ring_color">#22000000</color>
 </resources>

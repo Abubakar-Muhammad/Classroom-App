@@ -9,9 +9,10 @@ public class User {
     private String phone;
     private String type;
     private String id;
-    private List<String> courses;
+    private String student_id;
+    private List<Course> courses;
 
-    public User(String name, String email, String profile_image, String phone, String type, String id, List<String> courses) {
+    public User(String name, String email, String profile_image, String phone, String type, String id, List<Course> courses) {
         this.name = name;
         this.email = email;
         this.profile_image = profile_image;
@@ -21,7 +22,26 @@ public class User {
         this.courses = courses;
     }
 
+    public User(String name, String email, String profile_image, String phone, String type, String id, String student_id, List<Course> courses) {
+        this.name = name;
+        this.email = email;
+        this.profile_image = profile_image;
+        this.phone = phone;
+        this.type = type;
+        this.id = id;
+        this.student_id = student_id;
+        this.courses = courses;
+    }
+
     public User() {
+    }
+
+    public String getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(String student_id) {
+        this.student_id = student_id;
     }
 
     public String getName() {
@@ -72,11 +92,11 @@ public class User {
         this.profile_image = profile_image;
     }
 
-    public List<String> getCourses() {
+    public List<Course> getCourses() {
         return courses;
     }
 
-    public void setCourses(List<String> courses) {
+    public void setCourses(List<Course> courses) {
         this.courses = courses;
     }
 
@@ -89,6 +109,7 @@ public class User {
                 ", phone='" + phone + '\'' +
                 ", type='" + type + '\'' +
                 ", id='" + id + '\'' +
+                ", student_id='" + student_id + '\'' +
                 ", courses=" + courses +
                 '}';
     }

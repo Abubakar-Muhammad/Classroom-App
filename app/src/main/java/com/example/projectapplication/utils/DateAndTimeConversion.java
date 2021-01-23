@@ -1,13 +1,21 @@
 package com.example.projectapplication.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.text.format.DateUtils;
+import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -63,6 +71,20 @@ public class DateAndTimeConversion  {
         return formatted_time;
     }
 
+    public String get12hrAssigmentTime(String time){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(time.split(",")[0]);
+        stringBuilder.append(", ");
+        stringBuilder.append(time.split(",")[1].split(" ")[0]);
+        stringBuilder.append(" ");
+        String hr = time.split(",")[1].split(" ")[1].split(":")[0];
+        String min = time.split(",")[1].split(" ")[1].split(":")[1];
+        String _12hr = ((Integer.parseInt(hr) % 12)==0 ?"0"+Integer.parseInt(hr) % 12:""+Integer.parseInt(hr) % 12) + ":" + min + " " + ((Integer.parseInt(hr) >= 12) ? "PM" : "AM");
+        stringBuilder.append(_12hr);
+        String formatted_time = String.valueOf(stringBuilder);
+        return formatted_time;
+    }
+
     public String getTimestamp(){
 //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
 //        sdf.setTimeZone(TimeZone.getTimeZone("Canada/Pacific"));
@@ -71,5 +93,47 @@ public class DateAndTimeConversion  {
 //        sdf.setTimeZone(TimeZone.getTimeZone("Canada/Pacific"));
         return sdf.format(new Date());
     }
+
+    public static String getDayOfWeek(int value) {
+        String day = "";
+        switch (value) {
+            case 1:
+                day = "Sunday";
+                break;
+            case 2:
+                day = "Monday";
+                break;
+            case 3:
+                day = "Tuesday";
+                break;
+            case 4:
+                day = "Wednesday";
+                break;
+            case 5:
+                day = "Thursday";
+                break;
+            case 6:
+                day = "Friday";
+                break;
+            case 7:
+                day = "Saturday";
+                break;
+        }
+        return day;
+    }
+
+    public static Date dateConversion(String datetime){
+        SimpleDateFormat format = new SimpleDateFormat("EEE MMM dd hh:mm:ss zzz yyyy");
+        Date date = null;
+        try {
+            date = format.parse(datetime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return date;
+    }
+
+
+
 
 }

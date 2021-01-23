@@ -175,6 +175,16 @@ public class FileUtil {
         return filePath;
     }
 
+    public String getStorageDirForAssignment(String fileName) {
+        //create folder
+        File file = new File(Environment.getExternalStorageDirectory().getPath()+"/Classroom/Documents", "Assignments");
+        if (!file.mkdirs()) {
+            file.mkdirs();
+        }
+        String filePath = file.getAbsolutePath() + File.separator + fileName;
+        return filePath;
+    }
+
     public String getPath(Context context,Uri uri) {
 //        Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
 //        cursor.moveToFirst();

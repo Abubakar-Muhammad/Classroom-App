@@ -12,6 +12,10 @@
         android:title="@string/title_lecture_notes" />
 
     <item
+        android:id="@+id/navigation_assignments"
+        android:icon="@drawable/ic_baseline_assignment_24"
+        android:title="@string/assignments_menu_text" />
+    <item
         android:id="@+id/navigation_chats"
         android:icon="@drawable/ic_baseline_chat_24"
         android:title="@string/title_chats" />

@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.example.projectapplication.ui.SharedViewModel;
 import com.example.projectapplication.ui.announcements.AnnouncementsFragment;
+import com.example.projectapplication.ui.assignments.AssignmentsFragment;
 import com.example.projectapplication.ui.lectures_notes.LectureNotesFragment;
 import com.example.projectapplication.ui.chat.ChatsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -62,6 +63,11 @@ public class CourseActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, ChatsFragment.newInstance())
                                 .commitNow();
                        return true;
+                    case R.id.navigation_assignments:
+                        getSupportActionBar().setTitle(getString(R.string.assignments_menu_text));
+                        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, AssignmentsFragment.newInstance())
+                                .commitNow();
+                        return true;
                 }
                 return false;
             }

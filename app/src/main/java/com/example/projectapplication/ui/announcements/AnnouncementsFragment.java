@@ -26,6 +26,7 @@ import com.example.projectapplication.R;
 import com.example.projectapplication.models.Announcements;
 import com.example.projectapplication.ui.SharedViewModel;
 import com.example.projectapplication.utils.AnnouncementsListAdapter;
+import com.example.projectapplication.utils.DateAndTimeConversion;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -41,6 +42,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class AnnouncementsFragment extends Fragment {
@@ -173,13 +175,31 @@ public class AnnouncementsFragment extends Fragment {
     }
 
     private void setupRecyclerView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//        for(int i=0;i<mAnnouncementsList.size();i++){
+//            if(i !=0){
+//                Date date = DateAndTimeConversion.dateConversion(mAnnouncementsList.get(i).getAnnouncement_time());
+//                Date previousDate = DateAndTimeConversion.dateConversion(mAnnouncementsList.get(i-1).getAnnouncement_time());
+//                if(date.after(previousDate)){
+//                    mAnnouncementsList.get(i).setNewDate(true);
+////                notifyItemChanged(position);
+//                }
+//                else{
+//                    mAnnouncementsList.get(i).setNewDate(false);
+//                }
+//            }
+//            else if(i ==0){
+//                mAnnouncementsList.get(i).setNewDate(true);
+////            notifyItemChanged(position);
+//            }
+//        }
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        int position = layoutManager.findFirstVisibleItemPosition();
+        mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mAdapter = new AnnouncementsListAdapter(getActivity(),mAnnouncementsList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.getLayoutManager().scrollToPosition(mAnnouncementsList.size()-1);
-
     }
 
 }

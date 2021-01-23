@@ -29,7 +29,7 @@
     <string name="dbannouncements_node">announcements</string>
     <string name="dbchats_node">chats</string>
     <string name="dbassignments_node">assignments</string>
-    <string name="dbassignments_submission_node">assignment_submission</string>
+    <string name="dbassignments_submission_node">assignment_submissions</string>
 
     <!--  firebase users   -->
     <string name="user_name">name</string>
@@ -39,6 +39,7 @@
     <string name="user_id">id</string>
     <string name="user_type">type</string>
     <string name="user_courses">courses</string>
+    <string name="user_student_id">student_id</string>
 
     <!--firebase course    -->
     <string name="db_course_name">course_name</string>
@@ -47,6 +48,7 @@
     <string name="db_course_id">course_id</string>
     <string name="db_date_created">date_created</string>
     <string name="db_users">users</string>
+    <string name="db_assignments">assignments</string>
 
     <!-- firebase announcement    -->
     <string name="dbannouncement_title">announcement_title</string>
@@ -70,6 +72,29 @@
     <string name="dbmessage_sender_id">message_sender_id</string>
     <string name="dbmessage_timestamp">message_timestamp</string>
     <string name="dbmessage">message</string>
+
+    <!-- firebase assignment   -->
+    <string name="dbassignment_id">assignment_id</string>
+    <string name="dbassignment_name">assignment_name</string>
+    <string name="dbassignment_description">assignment_description</string>
+    <string name="dbassignment_due_date">assignment_due_date</string>
+    <string name="dbassignment_uri">assignment_uri</string>
+    <string name="dbassignment_url">assignment_url</string>
+    <string name="dbassignment_session_uri">assignment_session_uri</string>
+    <string name="dbassignment_tutor_path">assignment_tutor_path</string>
+    <string name="dbassignment_student_path">assignment_student_path</string>
+    <string name="dbassignment_upload_status">assignment_upload_status</string>
+    <string name="dbassignment_submissions">assignment_submissions</string>
+
+    <!-- firebase assignment submission    -->
+    <string name="dbsubmission_id">assignment_id</string>
+    <string name="dbsubmission_status">submission_status</string>
+    <string name="dbsubmission_time">submission_time</string>
+    <string name="dbstudent_id">student_id</string>
+    <string name="dbsubmission_url">submission_url</string>
+    <string name="dbsubmission_name">submission_name</string>
+    <string name="dbsubmission_location">submission_location</string>
+    <string name="dbsubmission_user_id">user_id</string>
 
 
     <string name="change_photo_from_memory_text">Choose photo from memory</string>
@@ -103,6 +128,10 @@
     <string name="resume_text">Resume</string>
     <string name="delete_text">Delete</string>
     <string name="new_message_text">new message...</string>
+    <string name="student_id_text">Enter your Student ID</string>
+    <string name="due_date_text">Enter Submission Due Date</string>
+    <string name="view_submissions_text">View Submissions</string>
+    <string name="assignments_menu_text">Assignments</string>
 
 
 </resources>

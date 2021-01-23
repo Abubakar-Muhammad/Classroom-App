@@ -92,7 +92,7 @@ public class EnrollCoursesListAdapter extends RecyclerView.Adapter<EnrollCourses
             } else {
                 String filterPattern = constraint.toString().toLowerCase().trim();
                 for (Course course : mFilterCourseList) {
-                    if (course.getCourse_code().toLowerCase().contains(filterPattern)) {
+                    if (course.getCourse_code().toLowerCase().contains(filterPattern)|| course.getCourse_name().toLowerCase().contains(filterPattern)) {
                         filteredList.add(course);
                     }
                 }
@@ -188,12 +188,15 @@ public class EnrollCoursesListAdapter extends RecyclerView.Adapter<EnrollCourses
                                     .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialogInterface, int i) {
+                                            Course course = new Course();
+                                            course.setCourse_id(mCourseList.get(mId).getCourse_id());
                                             FirebaseDatabase.getInstance().getReference()
                                                     .child(mContext.getString(R.string.db_users))
                                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                                     .child(mContext.getString(R.string.user_courses))
                                                     .child(mCourseList.get(mId).getCourse_id())
-                                                    .setValue(mCourseList.get(mId).getCourse_id());
+                                                    .setValue(course);
+//                                                    .setValue(mCourseList.get(mId).getCourse_id());
                                             Intent intent = new Intent(mContext, MainActivity.class);
                                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             mContext.startActivity(intent);

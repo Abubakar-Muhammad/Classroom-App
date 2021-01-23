@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         setContentView(R.layout.activity_login);
         init();
         setupAuthStateListener();
@@ -101,47 +102,59 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login(String email,String password){
-        Log.d(TAG, "login() called with: email = [" + email + "], password = [" + password + "]");
+        Log.d(TAG, "login() called with: email = [" + email + "], password = [" + password + "]"+FirebaseAuth.getInstance().getUid());
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                Log.d(TAG, "onComplete: "+task.getResult().toString());
-                if(task.isSuccessful()){
+////                Log.d(TAG, "onComplete: "+task.getResult().toString());
+//                task.addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        Toast.makeText(getApplicationContext(),"You inputted a wrong email or password.",Toast.LENGTH_LONG).show();
+//                    }
+//                });
+//                if(task.isSuccessful()){
 //                    Toast.makeText(getApplicationContext(),"login successful",Toast.LENGTH_LONG).show();
-                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-                    ref.child(getString(R.string.dbuser_node))
-                            .orderByKey()
-                            .equalTo(FirebaseAuth.getInstance().getUid())
-                            .addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-//                                        Map<String,Object> objectMap = (Map<String, Object>) snapshot.getChildren().iterator().next().getValue(User.class);
-                                        Map<String,Object> objectMap = (Map<String, Object>) dataSnapshot.getValue();
-                                        String userType = objectMap.get(getString(R.string.user_type)).toString();
-                                        User user = new User() ;
-                                        user.setType(userType);
-                                        if(user.getType().equals("Tutor")){
-                                            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                            startActivity(intent);
-                                        }
-                                        else{
-                                            Toast.makeText(LoginActivity.this, "This is the tutor application, please login with the student application", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                }
+                    if(FirebaseAuth.getInstance().getUid() == null){
+                        Toast.makeText(getApplicationContext(),"Your account is not verified. Please check your email for verification",Toast.LENGTH_SHORT).show();
+                    }
+//                    else{
+//                        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+//                        ref.child(getString(R.string.dbuser_node))
+//                                .orderByKey()
+//                                .equalTo(FirebaseAuth.getInstance().getUid())
+//                                .addListenerForSingleValueEvent(new ValueEventListener() {
+//                                    @Override
+//                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                                        for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+////                                        Map<String,Object> objectMap = (Map<String, Object>) snapshot.getChildren().iterator().next().getValue(User.class);
+//                                            Map<String,Object> objectMap = (Map<String, Object>) dataSnapshot.getValue();
+//                                            String userType = objectMap.get(getString(R.string.user_type)).toString();
+//                                            User user = new User() ;
+//                                            user.setType(userType);
+//                                            if(user.getType().equals("Tutor")){
+////                                                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+////                                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+////                                                startActivity(intent);
+//                                            }
+//                                            else{
+//                                                Toast.makeText(LoginActivity.this, "This is the tutor application, please login with the student application", Toast.LENGTH_SHORT).show();
+//                                            }
+//                                        }
+//                                    }
+//
+//                                    @Override
+//                                    public void onCancelled(@NonNull DatabaseError error) {
+//                                        Log.d(TAG, "onCancelled: "+error.getMessage());
+//                                    }
+//                                });
+//                    }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-                                    Log.d(TAG, "onCancelled: "+error.getMessage());
-                                }
-                            });
 //                    finish();
-                }
-                else{
-                    Toast.makeText(getApplicationContext(),"unable to login",Toast.LENGTH_LONG).show();
-                }
+//                }
+//                else{
+//                    Toast.makeText(getApplicationContext(),"unable to login",Toast.LENGTH_LONG).show();
+//                }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -163,10 +176,11 @@ public class LoginActivity extends AppCompatActivity {
                     if(user.isEmailVerified()){
                         Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                         Toast.makeText(LoginActivity.this, "Authenticated with: " + user.getEmail(), Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(intent);
-                        finish();
+//                        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+//                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//                        startActivity(intent);
+//                        finish();
+                        verifiedLogin();
                     }
                     else {
                         Toast.makeText(LoginActivity.this, "Email is not Verified\nCheck your Inbox", Toast.LENGTH_LONG).show();
@@ -178,6 +192,42 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         };
+    }
+
+    private void verifiedLogin(){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        ref.child(getString(R.string.dbuser_node))
+                .orderByKey()
+                .equalTo(FirebaseAuth.getInstance().getUid())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for(DataSnapshot dataSnapshot : snapshot.getChildren()){
+//                                        Map<String,Object> objectMap = (Map<String, Object>) snapshot.getChildren().iterator().next().getValue(User.class);
+                            Map<String,Object> objectMap = (Map<String, Object>) dataSnapshot.getValue();
+                            String userType = objectMap.get(getString(R.string.user_type)).toString();
+                            User user = new User() ;
+                            user.setType(userType);
+                            if(user.getType().equals("Tutor")){
+                                Log.d(TAG, "onDataChange: true");;
+                                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+//                                finish();
+                            }
+                            else{
+                                FirebaseAuth.getInstance().signOut();
+                                Toast.makeText(LoginActivity.this, "This is the tutor application, please login with the student application", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Log.d(TAG, "onCancelled: "+error.getMessage());
+                    }
+                });
+
     }
 
     @Override

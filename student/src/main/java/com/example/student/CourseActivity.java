@@ -17,6 +17,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.student.ui.SharedViewModel;
 import com.example.student.ui.announcements.AnnouncementsFragment;
+import com.example.student.ui.assignments.AssignmentsFragment;
 import com.example.student.ui.chat.ChatsFragment;
 import com.example.student.ui.lecture_notes.LectureNotesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -54,6 +55,11 @@ public class CourseActivity extends AppCompatActivity {
                     case R.id.navigation_chats:
                         getSupportActionBar().setTitle(getString(R.string.title_chats));
                         getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, ChatsFragment.newInstance())
+                                .commitNow();
+                        return true;
+                    case R.id.navigation_assignments:
+                        getSupportActionBar().setTitle(getString(R.string.assignments_menu_text));
+                        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, AssignmentsFragment.newInstance())
                                 .commitNow();
                         return true;
                 }

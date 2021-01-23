@@ -96,6 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
                     user.setType(mSpinner.getSelectedItem().toString());
                     user.setId(FirebaseAuth.getInstance().getCurrentUser().getUid());
                     user.setProfile_image("");
+                    user.setStudent_id("");
                     FirebaseDatabase.getInstance().getReference()
                             .child(getString(R.string.dbuser_node))
                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

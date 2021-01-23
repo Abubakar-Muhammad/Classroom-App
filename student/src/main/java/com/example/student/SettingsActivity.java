@@ -62,6 +62,7 @@ public class SettingsActivity extends AppCompatActivity implements ChangePhotoDi
     private EditText mPhone;
     private ImageView mProfileImage;
     private ProgressBar mProgressBar;
+    private EditText mStudentID;
 
     private static final int REQUEST_CODE = 1234;
     private static final double MB_THRESHHOLD = 5.0;
@@ -87,6 +88,7 @@ public class SettingsActivity extends AppCompatActivity implements ChangePhotoDi
         mPhone = findViewById(R.id.phone);
         mProfileImage = findViewById(R.id.profile_image);
         mProgressBar = findViewById(R.id.progressBar);
+        mStudentID = findViewById(R.id.student_id);
 
         Button save = findViewById(R.id.save);
         TextView change_password = findViewById(R.id.chang_password_button);
@@ -122,6 +124,12 @@ public class SettingsActivity extends AppCompatActivity implements ChangePhotoDi
                             .child(mAuth.getCurrentUser().getUid())
                             .child(getString(R.string.user_name))
                             .setValue(mName.getText().toString());
+                }
+                if(!isEmpty(mName.getText().toString())){
+                    mReference.child(getString(R.string.dbuser_node))
+                            .child(mAuth.getCurrentUser().getUid())
+                            .child(getString(R.string.user_student_id))
+                            .setValue(mStudentID.getText().toString());
                 }
                 /*
                 ------ Upload the New Photo -----
@@ -288,8 +296,10 @@ public class SettingsActivity extends AppCompatActivity implements ChangePhotoDi
                         user.setName(usermap.get(getString(R.string.user_name)).toString());
                         user.setPhone(usermap.get(getString(R.string.user_phone)).toString());
                         user.setProfile_image(usermap.get(getString(R.string.user_profile)).toString());
+                        user.setStudent_id(usermap.get(getString(R.string.user_student_id)).toString());
                         mName.setText(user.getName());
                         mPhone.setText(user.getPhone());
+                        mStudentID.setText(user.getStudent_id());
                         ImageLoader.getInstance().displayImage(user.getProfile_image(), mProfileImage);
 //                    }
                 }

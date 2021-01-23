@@ -1,0 +1,17 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.projectapplication.PieChart
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ccc"
+        android:paddingLeft="20dp"
+        android:paddingBottom="40dp"
+        app:decorRingColor="@color/piechart_ring_color"
+        app:iconSize="@dimen/piechart_IconSize"
+        app:innerHoleWeight="0.2"
+        app:textSize="@dimen/piechart_textSize" />
+
+</FrameLayout>

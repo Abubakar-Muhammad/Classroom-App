@@ -11,7 +11,10 @@
         android:layout_height="match_parent"
         tools:context=".CourseActivity">
 
-        <include layout="@layout/recyclerview" />
+        <include
+            layout="@layout/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"

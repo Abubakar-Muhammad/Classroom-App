@@ -5,6 +5,16 @@ public class Announcements {
     private String announcement_description;
     private String announcement_time;
 
+    public boolean isNewDate() {
+        return isNewDate;
+    }
+
+    public void setNewDate(boolean newDate) {
+        isNewDate = newDate;
+    }
+
+    private boolean isNewDate;
+
     public Announcements(String announcement_title, String announcement_description, String announcement_time) {
         this.announcement_title = announcement_title;
         this.announcement_description = announcement_description;

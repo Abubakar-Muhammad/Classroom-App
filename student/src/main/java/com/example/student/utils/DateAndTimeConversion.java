@@ -1,9 +1,13 @@
 package com.example.student.utils;
 
+import android.util.Log;
+
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DateAndTimeConversion  {
+    private static final String TAG = "DateAndTimeConversion";
     public static DateAndTimeConversion newInstance(){
         return new DateAndTimeConversion();
     }
@@ -54,6 +58,20 @@ public class DateAndTimeConversion  {
         return formatted_time;
     }
 
+    public String get12hrAssigmentTime(String time){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(time.split(",")[0]);
+        stringBuilder.append(", ");
+        stringBuilder.append(time.split(",")[1].split(" ")[0]);
+        stringBuilder.append(" ");
+        String hr = time.split(",")[1].split(" ")[1].split(":")[0];
+        String min = time.split(",")[1].split(" ")[1].split(":")[1];
+        String _12hr = ((Integer.parseInt(hr) % 12)==0 ?"0"+Integer.parseInt(hr) % 12:""+Integer.parseInt(hr) % 12) + ":" + min + " " + ((Integer.parseInt(hr) >= 12) ? "PM" : "AM");
+        stringBuilder.append(_12hr);
+        String formatted_time = String.valueOf(stringBuilder);
+        return formatted_time;
+    }
+
     public String getTimestamp(){
 //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.US);
 //        sdf.setTimeZone(TimeZone.getTimeZone("Canada/Pacific"));
@@ -61,6 +79,55 @@ public class DateAndTimeConversion  {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm yyyy-MM-dd ");
 //        sdf.setTimeZone(TimeZone.getTimeZone("Canada/Pacific"));
         return sdf.format(new Date());
+    }
+
+    public static String getDayOfWeek(int value) {
+        String day = "";
+        switch (value) {
+            case 1:
+                day = "Sunday";
+                break;
+            case 2:
+                day = "Monday";
+                break;
+            case 3:
+                day = "Tuesday";
+                break;
+            case 4:
+                day = "Wednesday";
+                break;
+            case 5:
+                day = "Thursday";
+                break;
+            case 6:
+                day = "Friday";
+                break;
+            case 7:
+                day = "Saturday";
+                break;
+        }
+        return day;
+    }
+
+    public static boolean dueDatePassed(String due_date){
+        String[] datesplit = due_date.split(",");
+        String due = datesplit[1];
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        try {
+            Date dueDate = sdf.parse(due);
+            Date current_date = new Date();
+            if(current_date.after(dueDate)){
+                Log.d(TAG, "dueDatePassed: date"+dueDate.toString());
+                return true;
+            }
+            else{
+               return false;
+            }
+        } catch (ParseException e) {
+            Log.d(TAG, "dueDatePassed: "+e.getMessage());
+            e.printStackTrace();
+            return true;
+        }
     }
 
 }

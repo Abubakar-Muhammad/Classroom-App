@@ -10,8 +10,9 @@ public class User {
     private String type;
     private String id;
     private List<String> courses;
+    private List<AssignmentSubmission> assignment_submissions;
 
-    public User(String name, String email, String profile_image, String phone, String type, String id, List<String> courses) {
+    public User(String name, String email, String profile_image, String phone, String type, String id, List<String> courses, List<AssignmentSubmission> assignment_submissions) {
         this.name = name;
         this.email = email;
         this.profile_image = profile_image;
@@ -19,6 +20,15 @@ public class User {
         this.type = type;
         this.id = id;
         this.courses = courses;
+        this.assignment_submissions = assignment_submissions;
+    }
+
+    public List<AssignmentSubmission> getAssignment_submissions() {
+        return assignment_submissions;
+    }
+
+    public void setAssignment_submissions(List<AssignmentSubmission> assignment_submissions) {
+        this.assignment_submissions = assignment_submissions;
     }
 
     public User() {
@@ -90,6 +100,7 @@ public class User {
                 ", type='" + type + '\'' +
                 ", id='" + id + '\'' +
                 ", courses=" + courses +
+                ", assignment_submissions=" + assignment_submissions +
                 '}';
     }
 }

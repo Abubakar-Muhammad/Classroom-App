@@ -64,6 +64,9 @@ public class LecturesNotesListAdapter extends RecyclerView.Adapter<LecturesNotes
     private String mCourseId;
     private UploadTask mUploadTask;
 
+    public final static int DATE_TYPE = 0;
+    public final static int TIME_TYPE =1;
+
     public LecturesNotesListAdapter(Context context, List<LectureNotes> lectureNotesList, String courseId) {
         mContext = context;
         mInflater = LayoutInflater.from(context);

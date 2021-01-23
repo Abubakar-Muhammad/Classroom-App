@@ -106,14 +106,16 @@ public class MainActivity extends ParentActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         for (DataSnapshot singleSnapshot : snapshot.getChildren()){
-                            Log.d(TAG, "onDataChange: "+singleSnapshot.getValue(String.class));
+                            Log.d(TAG, "onDataChange: "+singleSnapshot.getValue(Course.class));
 //                            HashMap<String,Object> dataSnapshot = (HashMap<String, Object>) singleSnapshot.getValue();
 //                            mCourses = singleSnapshot.getValue(User.class).getCourses();
 //                            mCourses.add(singleSnapshot.getValue(String.class));
-
+                            Course courses = new Course();
+                            Map<String,Object> map = (Map<String, Object>) singleSnapshot.getValue();
+                            courses.setCourse_id(map.get(getString(R.string.db_course_id)).toString());
                             Query query = FirebaseDatabase.getInstance().getReference().child(getString(R.string.dbcourses_node))
                                     .orderByKey()
-                                    .equalTo(singleSnapshot.getValue(String.class));
+                                    .equalTo(courses.getCourse_id());
                             query.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot snapshot) {
